@@ -1,0 +1,21 @@
+[flake8]
+ignore =
+    T499
+    I001
+    I003
+    I004
+    T484
+    T400
+    W503
+    B305
+    E231
+    E203
+    B017
+    N818
+max-line-length = 120
+copyright-check = False
+select = BLK,C,E,F,W,T4,I,N,B,T
+# We need to configure the mypy.ini because the flake8-mypy's default
+# options don't properly override it, so if we don't specify it we get
+# half of the config from mypy.ini and half from flake8-mypy.
+mypy_config = mypy.ini

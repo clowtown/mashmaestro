@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mashmaestro"
+dynamic = ["version"]
+readme = "README.md"
+license = ""
+requires-python = ">=3.9"
+dependencies = [
+    "discord.py",
+    "pandas",
+    "python-dotenv",
+    "tabulate",
+    "wheel",
+]
+
+[project.optional-dependencies]
+tests = [
+  'coverage',
+  'pytest',
+  'pytest-cov',
+  'pytest-subtests',
+  'pytest-xdist[psutil]',
+  'isort',
+  'black',
+  'flake8',
+  'flake8-black',
+  'flake8-bugbear',
+  'flake8-isort',
+  'flake8-print',
+  'flake8_module_name',
+  'flake8-mypy',
+  'pep8-naming',
+]
+
+[tool.hatch.version]
+path = "src/mashmaestro/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+]
+
+[project.scripts]
+mashmaestro = "mashmaestro.bot"
